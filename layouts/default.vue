@@ -21,14 +21,49 @@
     </ui-layout-main>
 
     <ui-layout-footer>
-      Footer
+      <div :class="$s.Flex">
+        <div :class="$s.FlexItem">
+          <ui-nav
+            :class="$s.FooterNav"
+            :navigation="footerNav"
+            variant="secondary"
+          />
+          <div :class="$s.Copyright">
+            &copy; Copyright 2017, Intricately, Inc. All Rights Reserved.
+          </div>
+        </div>
+        <div :class="[$s.FlexItem, $s.content]">
+          <ui-nav
+            :class="$s.FooterNav"
+            :navigation="footerSecondaryNav"
+            variant="secondary"
+          />
+          <div :class="[$s.Flex, $s['justify_end']]">
+            <div
+              v-for="(link, index) in socialMedia"
+              :key="index"
+              :class="[$s.FlexItem, $s.content]"
+            >
+              <a
+                :class="$s.SocialMediaLink"
+                :href="link.url"
+                target="_blank"
+              >
+                <ui-icon :name="link.icon" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </ui-layout-footer>
   </ui-layout>
 </template>
 
 <script>
 import { UiAvatar } from 'Components/Avatar';
+import { UiIcon } from 'Components/Icon';
 import { UiLayout, UiLayoutHeader, UiLayoutMain, UiLayoutSider, UiLayoutContent, UiLayoutFooter } from 'Components/Layout';
+import { UiNav } from 'Components/Nav';
 import { UiNavbar } from 'Components/Navbar';
 import { UiSideNav } from 'Components/SideNav';
 
@@ -39,12 +74,14 @@ import group3x from 'Static/images/group@3x.png';
 export default {
   components: {
     UiAvatar,
+    UiIcon,
     UiLayout,
     UiLayoutHeader,
     UiLayoutMain,
     UiLayoutSider,
     UiLayoutContent,
     UiLayoutFooter,
+    UiNav,
     UiNavbar,
     UiSideNav,
   },
@@ -91,7 +128,66 @@ export default {
         { to: '/company-table', label: 'Company Table' },
         { to: '/company-page', label: 'Company Page' },
       ],
+      footerNav: [
+        { to: '#', label: 'Pricing' },
+        { to: '#', label: 'Blog' },
+        { to: '#', label: 'Webinars' },
+        { to: '#', label: 'Events' },
+        { to: '#', label: 'Help Center' },
+      ],
+      footerSecondaryNav: [
+        { to: '#', label: 'Terms and Conditions' },
+        { to: '#', label: 'Privacy Policy' },
+      ],
+      socialMedia: [
+        { icon: 'fill-92', url: '#' },
+        { icon: 'fill-93', url: '#' },
+        { icon: 'fill-118', url: '#' },
+      ],
     };
   },
 };
 </script>
+
+<style module="$s">
+
+/* Footer
+---------------------------------------------- */
+.Flex {
+  display: flex;
+
+  &.justify_end {
+    justify-content: flex-end;
+  }
+}
+
+.FlexItem {
+  flex: 1;
+
+  &.content {
+    flex: 0 0 auto;
+  }
+
+  & + .FlexItem {
+    margin-left: var(--space-lg);
+  }
+}
+
+.FooterNav {
+  margin-bottom: var(--space-xl);
+}
+
+.Copyright {
+  color: var(--color-gray-300);
+}
+
+.SocialMediaLink {
+  display: block;
+  color: var(--color-blue-300);
+  transition: color var(--transition);
+
+  &:hover {
+    color: var(--color-blue-500);
+  }
+}
+</style>
