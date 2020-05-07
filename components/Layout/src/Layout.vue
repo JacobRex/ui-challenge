@@ -27,6 +27,10 @@ export default {
 body {
   margin: 0;
 }
+
+h1, h2, h3, h4, h5, h6, p {
+  margin-top: 0;
+}
 </style>
 
 <style module="$s">
