@@ -1,6 +1,6 @@
 <template>
   <div>
-    Company Data
+    Company Page
   </div>
 </template>
 
