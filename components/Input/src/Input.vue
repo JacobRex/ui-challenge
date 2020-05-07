@@ -10,6 +10,14 @@
       ]"
       @click="focus()"
     >
+      <div
+        v-if="prefix || $slots.prefix"
+        :class="$s.Prefix"
+      >
+        <slot name="prefix">
+          {{ prefix }}
+        </slot>
+      </div>
       <input
         ref="input"
         v-bind="$attrs"
@@ -42,6 +50,10 @@ export default {
 
   props: {
     placeholder: {
+      type: String,
+      default: undefined,
+    },
+    prefix: {
       type: String,
       default: undefined,
     },
@@ -189,5 +201,18 @@ export default {
     -webkit-appearance: none;
     margin: 0;
   }
+}
+
+/* Prefix
+---------------------------------------------- */
+.Prefix {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  margin-right: var(--space-sm);
+  color: var(--font-color);
+  font-size: 14px;
+  line-height: 1em;
+  font-weight: var(--font-weight-medium);
 }
 </style>
