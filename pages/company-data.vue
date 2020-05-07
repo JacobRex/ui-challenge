@@ -4,6 +4,16 @@
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
     </p>
 
+    <ui-form-field
+      :error="form.companyName.error"
+      label="Company Name"
+    >
+      <ui-input
+        v-model="form.companyName.value"
+        placeholder="e.g. Your Company Name"
+      />
+    </ui-form-field>
+
     <ui-button @click="handleSubmit">
       Submit
     </ui-button>
@@ -13,7 +23,8 @@
 <script>
 import { UiButton } from 'Components/Button';
 import { UiCard } from 'Components/Card';
-
+import { UiFormField } from 'Components/FormField';
+import { UiInput } from 'Components/Input';
 
 export default {
   inject: ['layerAPI'],
@@ -21,6 +32,19 @@ export default {
   components: {
     UiButton,
     UiCard,
+    UiFormField,
+    UiInput,
+  },
+
+  data() {
+    return {
+      form: {
+        companyName: {
+          value: '',
+          error: '',
+        },
+      },
+    };
   },
 
   mounted() {
@@ -35,8 +59,13 @@ export default {
   },
 
   methods: {
-    handleSubmit() {
-      console.log('handleSubmit');
+    handleSubmit(form = this.form) {
+      // Validate Company Name
+      if (form.companyName.value === '') {
+        form.companyName.error = 'You must enter a company name.';
+      } else {
+        form.companyName.error = null;
+      }
     },
   },
 };
