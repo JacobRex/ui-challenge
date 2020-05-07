@@ -14,6 +14,35 @@
       />
     </ui-form-field>
 
+    <ui-grid>
+      <ui-grid-item>
+        <ui-form-field
+          :error="form.spendMin.errors.join('. ')"
+          label="Company Spend Ability (Min)"
+        >
+          <ui-input
+            v-model="form.spendMin.value"
+            prefix="$"
+            placeholder="e.g. $150,000"
+            type="number"
+          />
+        </ui-form-field>
+      </ui-grid-item>
+      <ui-grid-item>
+        <ui-form-field
+          :error="form.spendMax.errors.join('. ')"
+          label="Company Spend Ability (Max)"
+        >
+          <ui-input
+            v-model="form.spendMax.value"
+            prefix="$"
+            placeholder="e.g. $330,000"
+            type="number"
+          />
+        </ui-form-field>
+      </ui-grid-item>
+    </ui-grid>
+
     <ui-button @click="handleSubmit">
       Submit
     </ui-button>
@@ -24,6 +53,7 @@
 import { UiButton } from 'Components/Button';
 import { UiCard } from 'Components/Card';
 import { UiFormField } from 'Components/FormField';
+import { UiGrid, UiGridItem } from 'Components/Grid';
 import { UiInput } from 'Components/Input';
 
 export default {
@@ -33,6 +63,8 @@ export default {
     UiButton,
     UiCard,
     UiFormField,
+    UiGrid,
+    UiGridItem,
     UiInput,
   },
 
@@ -41,7 +73,15 @@ export default {
       form: {
         companyName: {
           value: '',
-          error: '',
+          error: null,
+        },
+        spendMin: {
+          value: '',
+          errors: [],
+        },
+        spendMax: {
+          value: '',
+          errors: [],
         },
       },
     };
