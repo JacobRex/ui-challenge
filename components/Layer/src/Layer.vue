@@ -32,16 +32,16 @@ export default {
     LayerMounter,
   },
 
-  methods: {
-    clickOverlay() {
-      this.layerAPI.cancel();
-    },
-  },
-
   mounted() {
     if (!this.layerAPI) {
       throw new Error('UiLayer: The UiLayer component must be mounted inside a UiLayout. Make sure that the view attempting to mount your Layer is a child of a UiLayout component.');
     }
+  },
+
+  methods: {
+    clickOverlay() {
+      this.layerAPI.cancel();
+    },
   },
 };
 </script>

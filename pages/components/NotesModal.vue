@@ -2,8 +2,8 @@
   <ui-modal>
     <ui-form-field label="Additional Notes">
       <ui-textarea
-        v-model="form.additionalNotes.value"
         ref="textarea"
+        v-model="form.additionalNotes.value"
         placeholder="e.g. Good Tech Company"
       />
     </ui-form-field>
