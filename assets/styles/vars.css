@@ -112,8 +112,10 @@
   /* Transitions
   -------------------------------------------- */
   --transition-time: 0.15s;
+  --transition-time-long: 0.3s;
   --transition-easing: cubic-bezier(.25,.46,.45,.94);
   --transition: var(--transition-time) var(--transition-easing);
+  --transition-long: var(--transition-time-long) var(--transition-easing);
 }
 
 /* Media Queries
