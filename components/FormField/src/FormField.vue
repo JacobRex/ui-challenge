@@ -36,8 +36,6 @@ export default {
     };
   },
 
-  inheritAttrs: false,
-
   components: {
     UiHeading,
   },

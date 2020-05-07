@@ -76,10 +76,6 @@ export default {
       };
       if (this.$props.value !== undefined) {
         listeners.input = (event) => {
-          // eslint not smart enough to see that the following line gets
-          // executed as part of a callback and not within the computed
-          // prop itself so we have to disable it
-          // eslint-disable-next-line vue/no-side-effects-in-computed-properties
           this.inputVal = event.target.value;
         };
       }
