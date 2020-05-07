@@ -1,0 +1,77 @@
+:root {
+  /* --------------------------------------------
+  VARIABLE NAMING GUIDELINES
+  --[element]-[css-property]-[state]
+  --border-color;
+  --button-border-color;
+  --button-border-color-hover;
+  --------------------------------------------- */
+
+
+  /* Spacing
+  -------------------------------------------- */
+  --space-xs: 4px;
+  --space-sm: calc(var(--space-xs) * 2);  /* 8px */
+  --space-md: calc(var(--space-xs) * 3);  /* 12px */
+  --space-lg: calc(var(--space-xs) * 4);  /* 16px */
+  --space-xl: calc(var(--space-xs) * 6);  /* 24px */
+  --space-xx: calc(var(--space-xs) * 8);  /* 32px */
+  --space-xxx: calc(var(--space-xs) * 14); /* 56px */
+
+
+  /* Colors
+  -------------------------------------------- */
+  --color-pink-500: #FF3C6A;
+
+  --color-blue-700: #1F2B5A;
+  --color-blue-500: #394883;
+  --color-blue-300: #5D699B;
+  --color-blue-200: #D4D9E3;
+  --color-blue-100: #E7E9F3;
+
+  --color-gray-600: #333333;
+  --color-gray-500: #535353;
+  --color-gray-400: #888888;
+  --color-gray-300: #B5B5B5;
+  --color-gray-200: #F3F3F3;
+  --color-gray-100: #FAFBFC;
+
+  --color-white: #FFF;
+  --color-black: #000;
+
+
+  /* Typography
+  -------------------------------------------- */
+  --font-family: Helvetica, Arial, sans-serif;
+
+  --font-color: var(--color-gray-500);
+  --font-size: 12px;
+
+  --font-weight: 400;
+  --font-weight-light: 300;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  --line-height-sm: 1em;
+  --line-height-md: 1.5em;
+  --line-height: var(--line-height-md);
+
+
+  /* Borders
+  -------------------------------------------- */
+  --border-radius: 4px;
+
+
+  /* Transitions
+  -------------------------------------------- */
+  --transition-time: 0.15s;
+  --transition-easing: cubic-bezier(.25,.46,.45,.94);
+  --transition: var(--transition-time) var(--transition-easing);
+}
+
+/* Media Queries
+-------------------------------------------- */
+@custom-media --mobile-up (min-width: 600px);
+@custom-media --tablet-up (min-width: 768px);
+@custom-media --lg-tablet-up (min-width: 992px);
+@custom-media --desktop-up (min-width: 1200px);

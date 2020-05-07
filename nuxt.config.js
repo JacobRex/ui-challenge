@@ -1,3 +1,4 @@
+const path = require('path');
 
 export default {
   mode: 'spa',
@@ -56,6 +57,39 @@ export default {
           exclude: /(node_modules)/,
         });
       }
-    }
+    },
+    postcss: {
+      // Add plugin names as key and arguments as value
+      // Install them before as dependencies with npm or yarn
+      plugins: {
+        'postcss-import': {
+          resolve(id) {
+            const aliases = {
+              Vars: path.resolve(__dirname, 'assets/styles/vars.css'),
+            };
+
+            for (let alias in aliases) {
+              if (id === alias) {
+                id = aliases[alias];
+              }
+            }
+
+            return id;
+          },
+        },
+        'postcss-nesting': {},
+        'postcss-custom-media': {},
+        'postcss-preset-env': {
+          browsers: 'last 2 versions',
+        },
+        cssnano: {},
+      },
+      preset: {
+        // Change the postcss-preset-env settings
+        autoprefixer: {
+          grid: true,
+        },
+      },
+    },
   }
 };
