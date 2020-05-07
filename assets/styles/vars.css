@@ -41,6 +41,7 @@
   --color-white: #FFF;
   --color-black: #000;
 
+
   /* Semantic
   -------------------------------------------- */
   --color-danger: var(--color-red-500);
@@ -56,6 +57,11 @@
   -------------------------------------------- */
   --layout-sider-width: 224px;
   --max-width: 970px;
+
+
+  /* Grid
+  -------------------------------------------- */
+  --grid-gutter: var(--space-lg);
 
 
   /* Typography
