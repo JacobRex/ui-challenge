@@ -50,12 +50,16 @@
   --font-family: Helvetica, Arial, sans-serif;
 
   --font-color: var(--color-gray-500);
+
   --font-size: 14px;
+  --font-size: 12px;
 
   --font-weight: 400;
   --font-weight-light: 300;
   --font-weight-medium: 500;
   --font-weight-bold: 700;
+
+  --letter-spacing: 0.5px;
 
   --line-height-sm: 1em;
   --line-height-md: 1.5em;

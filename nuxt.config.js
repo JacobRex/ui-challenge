@@ -53,6 +53,7 @@ export default {
       config.resolve.alias = {
         Assets: path.resolve(__dirname, 'assets'),
         Components: path.resolve(__dirname, 'components'),
+        Utils: path.resolve(__dirname, 'components/Utils'),
       };
 
       // Run ESLint on save
