@@ -15,5 +15,6 @@ export default {
 
 .LayoutSider {
   width: var(--layout-sider-width);
+  margin-right: var(--space-xx);
 }
 </style>

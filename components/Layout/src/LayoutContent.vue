@@ -1,10 +1,5 @@
 <template>
-  <div
-    :class="[
-      $s.LayoutContent,
-      { [$s.hasSider]: hasSider },
-    ]"
-  >
+  <div :class="$s.LayoutContent">
     <slot />
   </div>
 </template>
@@ -12,13 +7,6 @@
 <script>
 export default {
   name: 'UiLayoutContent',
-
-  props: {
-    hasSider: {
-      type: Boolean,
-      default: false,
-    },
-  },
 };
 </script>
 
@@ -27,9 +15,5 @@ export default {
 
 .LayoutContent {
   flex: 1;
-
-  &.hasSider {
-    margin-left: var(--space-xx);
-  }
 }
 </style>
