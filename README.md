@@ -16,6 +16,9 @@ Thanks very much for your consideration!
 ## Build Setup
 
 ```bash
+# ensure npm v12.16.1
+$ nvm use
+
 # install dependencies
 $ npm install
 
