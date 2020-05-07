@@ -48,6 +48,11 @@ export default {
     ** You can extend webpack config here
     */
     extend (config, ctx) {
+      // Setup Aliases
+      config.resolve.alias = {
+        Components: path.resolve(__dirname, 'components'),
+      };
+
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
