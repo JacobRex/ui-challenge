@@ -1,9 +1,7 @@
-<template>
-  <div>
-    Content
-  </div>
-</template>
-
 <script>
-export default {};
+export default {
+  mounted() {
+    this.$router.push({ path: '/company-data' });
+  },
+};
 </script>
