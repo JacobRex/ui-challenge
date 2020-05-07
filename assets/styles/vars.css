@@ -41,6 +41,7 @@
 
   /* Layout
   -------------------------------------------- */
+  --layout-sider-width: 224px;
   --max-width: 970px;
 
 
@@ -49,7 +50,7 @@
   --font-family: Helvetica, Arial, sans-serif;
 
   --font-color: var(--color-gray-500);
-  --font-size: 12px;
+  --font-size: 14px;
 
   --font-weight: 400;
   --font-weight-light: 300;
