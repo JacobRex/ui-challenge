@@ -2,13 +2,12 @@
   <ui-layout>
     <ui-layout-header sticky>
       <ui-navbar :navigation="navbar">
-        <template slot="actions">
-          <ui-avatar
-            show-arrow
-            :src="group"
-            :srcset="`${group} 1x, ${group2x} 2x, ${group3x} 3x`"
-          />
-        </template>
+        <ui-avatar
+          slot="actions"
+          show-arrow
+          :src="group"
+          :srcset="`${group} 1x, ${group2x} 2x, ${group3x} 3x`"
+        />
       </ui-navbar>
     </ui-layout-header>
 
