@@ -68,7 +68,13 @@
 
   /* Borders
   -------------------------------------------- */
+  --border-color: var(--color-blue-200);
   --border-radius: 4px;
+
+
+  /* Box Shadow
+  -------------------------------------------- */
+  --box-shadow-border: inset 0px 0px 0px 1px var(--border-color);
 
 
   /* Transitions
