@@ -125,18 +125,16 @@ export default {
       this.validateField(form.spendMax, form.spendMax.value >= 0, 'You must enter a positive value.');
 
       // Validate min < max
-      if (form.spendMin.value !== '' && form.spendMax.value !== '') {
-        this.validateField(
-          form.spendMin,
-          form.spendMin.value < form.spendMax.value,
-          'The min spend must be less than the max spend.'
-        );
-        this.validateField(
-          form.spendMax,
-          form.spendMax.value > form.spendMin.value,
-          'The max spend must be greater than the min spend.'
-        );
-      }
+      this.validateField(
+        form.spendMin,
+        form.spendMin.value < form.spendMax.value,
+        'The min spend must be less than the max spend.'
+      );
+      this.validateField(
+        form.spendMax,
+        form.spendMax.value > form.spendMin.value,
+        'The max spend must be greater than the min spend.'
+      );
     },
 
     validateField(field, validCondition, error) {
