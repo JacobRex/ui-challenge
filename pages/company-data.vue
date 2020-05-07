@@ -1,27 +1,26 @@
 <template>
-  <div>
-    <ui-button @click="openLayer">
-      Open Layer
+  <ui-card padding="xl">
+    <p :class="$s.Text">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+    </p>
+
+    <ui-button @click="handleSubmit">
+      Submit
     </ui-button>
-  </div>
+  </ui-card>
 </template>
 
 <script>
 import { UiButton } from 'Components/Button';
+import { UiCard } from 'Components/Card';
 
-import NotesModal from './components/NotesModal.vue';
 
 export default {
-  components: {
-    UiButton,
-  },
-
   inject: ['layerAPI'],
 
-  methods: {
-    openLayer() {
-      this.layerAPI.open(NotesModal);
-    },
+  components: {
+    UiButton,
+    UiCard,
   },
 
   mounted() {
@@ -32,8 +31,23 @@ export default {
         { to: '/company-data', label: 'Company Data',},
       ],
     );
-
     this.$store.commit('layout/setVariant', 'normal');
+  },
+
+  methods: {
+    handleSubmit() {
+      console.log('handleSubmit');
+    },
   },
 };
 </script>
+
+<style module="$s">
+/* Text
+---------------------------------------------- */
+.Text {
+  margin-bottom: var(--space-xx);
+  font-size: 14px;
+  line-height: var(--line-height-md);
+}
+</style>
