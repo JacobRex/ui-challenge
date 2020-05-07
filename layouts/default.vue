@@ -12,9 +12,8 @@
     </ui-layout-header>
 
     <ui-layout-main>
-      Main
       <ui-layout-sider>
-        Sider
+        <ui-side-nav :navigation="sideNav" />
       </ui-layout-sider>
       <ui-layout-content has-sider>
         <nuxt />
@@ -31,6 +30,7 @@
 import { UiAvatar } from 'Components/Avatar';
 import { UiLayout, UiLayoutHeader, UiLayoutMain, UiLayoutSider, UiLayoutContent, UiLayoutFooter } from 'Components/Layout';
 import { UiNavbar } from 'Components/Navbar';
+import { UiSideNav } from 'Components/SideNav';
 
 import group from 'Static/images/group.png';
 import group2x from 'Static/images/group@2x.png';
@@ -46,6 +46,7 @@ export default {
     UiLayoutContent,
     UiLayoutFooter,
     UiNavbar,
+    UiSideNav,
   },
 
   data() {
@@ -84,6 +85,11 @@ export default {
             },
           ],
         },
+      ],
+      sideNav: [
+        { to: '/company-data', label: 'Company Data' },
+        { to: '/company-table', label: 'Company Table' },
+        { to: '/company-page', label: 'Company Page' },
       ],
     };
   },
