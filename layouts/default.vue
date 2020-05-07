@@ -1,5 +1,5 @@
 <template>
-  <ui-layout>
+  <ui-layout :variant="layoutVariant">
     <ui-layout-header sticky>
       <ui-navbar :navigation="navbar">
         <ui-avatar
@@ -20,7 +20,7 @@
       </ui-layout-content>
     </ui-layout-main>
 
-    <ui-layout-footer>
+    <ui-layout-footer :variant="layoutVariant">
       <div :class="$s.Flex">
         <div :class="$s.FlexItem">
           <ui-nav
@@ -145,6 +145,12 @@ export default {
         { icon: 'fill-118', url: '#' },
       ],
     };
+  },
+
+  computed: {
+    layoutVariant() {
+      return this.$store.state.layout.variant;
+    },
   },
 };
 </script>
