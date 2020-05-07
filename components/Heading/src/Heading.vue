@@ -4,6 +4,7 @@
     :class="[
       $s.Heading,
       $s[`variant_${variant}`],
+      { [$s.flush]: flush },
     ]"
   >
     <slot />
