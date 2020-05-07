@@ -1,20 +1,17 @@
 <template>
   <div :class="$s.Modal">
-    <ui-container>
-      <ui-icon
-        :class="$s.Close"
-        name="close"
-        @click="cancelModal"
-      />
-      <div :class="$s.Content">
-        <slot />
-      </div>
-    </ui-container>
+    <ui-icon
+      :class="$s.Close"
+      name="close"
+      @click="cancelModal"
+    />
+    <div :class="$s.Content">
+      <slot />
+    </div>
   </div>
 </template>
 
 <script>
-import { UiContainer } from 'Components/Container';
 import { UiIcon } from 'Components/Icon';
 
 export default {
@@ -23,7 +20,6 @@ export default {
   inject: ['layerAPI'],
 
   components: {
-    UiContainer,
     UiIcon,
   },
 
@@ -40,7 +36,8 @@ export default {
 
 .Modal {
   position: relative;
-  width: 585px;
+  width: calc(100% - (2 * var(--space-xl)));
+  max-width: 585px;
   max-height: calc(100vh - 200px);
   overflow-y: auto;
   background-color: var(--color-white);
@@ -63,7 +60,6 @@ export default {
 }
 
 .Content {
-  padding: var(--space-xx) 0;
-  clear: both;
+  padding: var(--space-xx) var(--space-xl);
 }
 </style>
