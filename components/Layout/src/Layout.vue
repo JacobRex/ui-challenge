@@ -6,18 +6,86 @@
     ]"
   >
     <slot />
+    <ui-layer v-if="layer.component" />
   </div>
 </template>
 
 <script>
+import { UiLayer } from 'Components/Layer';
+
 export default {
   name: 'UiLayout',
+
+  provide() {
+    return {
+      layerAPI: this.layer,
+    };
+  },
+
+  components:  {
+    UiLayer,
+  },
 
   props: {
     variant: {
       type: String,
       default: 'normal',
       validator: (value) => ['normal', 'backdrop'].includes(value),
+    },
+  },
+
+  data() {
+    return {
+      layer: {
+        open: this.openLayer,
+        cancel: this.cancelLayer,
+        close: this.closeLayer,
+        component: null,
+        viewData: {},
+        beforeCancel: null,
+        beforeClose: null,
+      },
+    };
+  },
+
+  methods: {
+    openLayer(component, data) {
+      if (component) {
+        Object.assign(this.layer, {
+          component: component,
+          viewData: data,
+        });
+        document.body.classList.add(this.$s.disable_scroll);
+        document.addEventListener('keyup', this.handleEscKey);
+      } else {
+        throw new Error('UiLayer: No component was defined to open.');
+      }
+    },
+
+    cancelLayer(data) {
+      if (typeof this.layer.beforeCancel === 'function') {
+        this.layer.beforeCancel(data);
+      }
+
+      Object.assign(this.layer, {
+        component: null,
+        viewData: data,
+      });
+      document.body.classList.remove(this.$s.disable_scroll);
+      document.removeEventListener('keyup', this.handleEscKey);
+    },
+
+    closeLayer(data) {
+      if (typeof this.layer.beforeClose === 'function') {
+        this.layer.beforeClose(data);
+      }
+
+      Object.assign(this.layer, {
+        component: null,
+        viewData: data,
+      });
+      document.body.classList.remove(this.$s.disable_scroll);
+      document.removeEventListener('keyup', this.handleEscKey);
     },
   },
 };
