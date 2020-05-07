@@ -12,6 +12,10 @@
     </ui-layout-header>
 
     <ui-layout-main>
+      <ui-bread-crumb
+        v-if="breadcrumbs"
+        :crumbs="breadcrumbs"
+      />
       <ui-layout-sider>
         <ui-side-nav :navigation="sideNav" />
       </ui-layout-sider>
@@ -61,6 +65,7 @@
 
 <script>
 import { UiAvatar } from 'Components/Avatar';
+import { UiBreadCrumb } from 'Components/BreadCrumb';
 import { UiIcon } from 'Components/Icon';
 import { UiLayout, UiLayoutHeader, UiLayoutMain, UiLayoutSider, UiLayoutContent, UiLayoutFooter } from 'Components/Layout';
 import { UiNav } from 'Components/Nav';
@@ -74,6 +79,7 @@ import group3x from 'Static/images/group@3x.png';
 export default {
   components: {
     UiAvatar,
+    UiBreadCrumb,
     UiIcon,
     UiLayout,
     UiLayoutHeader,
@@ -148,6 +154,10 @@ export default {
   },
 
   computed: {
+    breadcrumbs() {
+      return this.$store.state.layout.breadcrumbs;
+    },
+
     layoutVariant() {
       return this.$store.state.layout.variant;
     },
