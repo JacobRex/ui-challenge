@@ -53,9 +53,15 @@ export default {
   },
 
   data() {
+    const vm = this;
     return {
       state: {
-        error: this.error,
+        get error() {
+          return vm.error;
+        },
+        set error(error) {
+          vm.error = error;
+        },
       }
     };
   },

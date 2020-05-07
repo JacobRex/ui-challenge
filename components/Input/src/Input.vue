@@ -83,7 +83,7 @@ export default {
     },
 
     hasError() {
-      return this.formField && this.formField.error;
+      return Boolean(this.formField.error);
     },
   },
 
