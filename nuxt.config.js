@@ -49,12 +49,30 @@ export default {
     ** You can extend webpack config here
     */
     extend (config, ctx) {
+      config.module.rules.push(
+        {
+          test: /\.md$/,
+          exclude: /(node_modules|bower_components)/,
+          use: [
+            'vue-loader',
+            {
+              loader: 'markdown-to-vue-loader',
+              options: {
+              }
+            }
+          ]
+        },
+      );
+
       // Setup Aliases
       config.resolve.alias = {
+        'vue$': 'vue/dist/vue.esm.js',
         Assets: path.resolve(__dirname, 'assets'),
         Components: path.resolve(__dirname, 'components'),
         Static: path.resolve(__dirname, 'static'),
         Utils: path.resolve(__dirname, 'components/Utils'),
+        DocComponents: path.resolve(__dirname, 'components/Documentation'),
+        DocUtils: path.resolve(__dirname, 'components/Documentation/utils'),
       };
 
       // Run ESLint on save
