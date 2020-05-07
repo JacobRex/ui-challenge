@@ -23,6 +23,8 @@
   -------------------------------------------- */
   --color-pink-500: #FF3C6A;
 
+  --color-red-500: #A52929;
+
   --color-blue-700: #1F2B5A;
   --color-blue-500: #394883;
   --color-blue-300: #5D699B;
@@ -38,6 +40,10 @@
 
   --color-white: #FFF;
   --color-black: #000;
+
+  /* Semantic
+  -------------------------------------------- */
+  --color-danger: var(--color-red-500);
 
 
   /* Opacity
