@@ -1,11 +1,17 @@
 <template>
-  <div>
+  <ui-heading>
     Company Table
-  </div>
+  </ui-heading>
 </template>
 
 <script>
+import { UiHeading } from 'Components/Heading';
+
 export default {
+  components: {
+    UiHeading,
+  },
+
   mounted() {
     this.$store.commit(
       'layout/setBreadCrumbs',
