@@ -5,7 +5,7 @@
     </p>
 
     <ui-form-field
-      :error="form.companyName.error"
+      :error="form.companyName.errors.join('. ')"
       label="Company Name"
     >
       <ui-input
@@ -73,7 +73,7 @@ export default {
       form: {
         companyName: {
           value: '',
-          error: null,
+          errors: [],
         },
         spendMin: {
           value: '',
@@ -101,28 +101,22 @@ export default {
   methods: {
     handleSubmit(form = this.form) {
       // Validate Company Name
-      if (form.companyName.value === '') {
-        form.companyName.error = 'You must enter a company name.';
-      } else {
-        form.companyName.error = null;
-      }
+      this.validateField(form.companyName, form.companyName.value, 'You must enter a Company Name');
 
       // Validate positive spend numbers
-      this.validatePositive(form.spendMin);
-      this.validatePositive(form.spendMax);
+      this.validateField(form.spendMin, form.spendMin.value >= 0, 'You must enter a positive value');
+      this.validateField(form.spendMax, form.spendMax.value >= 0, 'You must enter a positive value');
     },
 
-    validatePositive(field) {
-      const error= 'You must enter a positive value';
-
-      if (field.value < 0) {
+    validateField(field, validCondition, error) {
+      if (!validCondition) {
         if (!field.errors.includes(error)) {
           field.errors.push(error);
         }
       } else {
         field.errors.splice(field.errors.indexOf(error, 1));
       }
-    }
+    },
   },
 };
 </script>
