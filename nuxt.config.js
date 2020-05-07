@@ -53,6 +53,7 @@ export default {
       config.resolve.alias = {
         Assets: path.resolve(__dirname, 'assets'),
         Components: path.resolve(__dirname, 'components'),
+        Static: path.resolve(__dirname, 'static'),
         Utils: path.resolve(__dirname, 'components/Utils'),
       };
 
