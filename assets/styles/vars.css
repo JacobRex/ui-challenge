@@ -39,6 +39,12 @@
   --color-white: #FFF;
   --color-black: #000;
 
+
+  /* Opacity
+  -------------------------------------------- */
+  --opacity-disabled: 0.5;
+
+
   /* Layout
   -------------------------------------------- */
   --layout-sider-width: 224px;
@@ -64,6 +70,12 @@
   --line-height-sm: 1em;
   --line-height-md: 1.5em;
   --line-height: var(--line-height-md);
+
+
+  /* Controls
+  -------------------------------------------- */
+  --control-height: 40px;
+  --control-height-small: 30px;
 
 
   /* Borders
