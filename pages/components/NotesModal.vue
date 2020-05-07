@@ -1,17 +1,15 @@
 <template>
-  <div :class="$s.Test">
-    Additional notes
-  </div>
+  <ui-modal title="Additional Notes">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacinia laoreet luctus. Pellentesque at consequat sem. Morbi at fermentum sem. Fusce sit amet urna malesuada, consequat nunc ac, accumsan mauris. Etiam tristique quam purus, id malesuada eros ultrices ut. Pellentesque convallis pellentesque dui ut molestie. Vivamus accumsan tincidunt facilisis. Praesent at consequat turpis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+  </ui-modal>
 </template>
 
-<style module="$s">
-@import 'Vars';
+<script>
+import { UiModal } from 'Components/Modal';
 
-.Test {
-  width: 500px;
-  padding: var(--space-xx);
-  text-align: center;
-  border-radius: var(--border-radius);
-  background: var(--color-white);
-}
-</style>
+export default {
+  components: {
+    UiModal,
+  },
+};
+</script>
