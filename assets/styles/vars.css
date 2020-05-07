@@ -44,6 +44,7 @@
   /* Semantic
   -------------------------------------------- */
   --color-danger: var(--color-red-500);
+  --color-focus: var(--color-blue-300);
 
 
   /* Opacity
@@ -82,17 +83,23 @@
   -------------------------------------------- */
   --control-height: 40px;
   --control-height-small: 30px;
+  --control-box-shadow: 0 0 8px var(--color-blue-200);
 
 
   /* Borders
   -------------------------------------------- */
   --border-color: var(--color-blue-200);
+  --border-color-hover: var(--color-gray-300);
   --border-radius: 4px;
 
 
   /* Box Shadow
   -------------------------------------------- */
   --box-shadow-border: inset 0px 0px 0px 1px var(--border-color);
+  --box-shadow-border: inset 0px 0px 0px 1px var(--border-color);
+  --box-shadow-border-hover: inset 0px 0px 0px 1px var(--border-color-hover);
+  --box-shadow-border-focus: inset 0px 0px 0px 2px var(--color-focus);
+  --box-shadow-border-error: inset 0 0 0 2px var(--color-danger);
 
 
   /* Transitions
