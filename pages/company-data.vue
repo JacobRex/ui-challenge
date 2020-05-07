@@ -106,7 +106,23 @@ export default {
       } else {
         form.companyName.error = null;
       }
+
+      // Validate positive spend numbers
+      this.validatePositive(form.spendMin);
+      this.validatePositive(form.spendMax);
     },
+
+    validatePositive(field) {
+      const error= 'You must enter a positive value';
+
+      if (field.value < 0) {
+        if (!field.errors.includes(error)) {
+          field.errors.push(error);
+        }
+      } else {
+        field.errors.splice(field.errors.indexOf(error, 1));
+      }
+    }
   },
 };
 </script>
