@@ -43,6 +43,14 @@
       </ui-grid-item>
     </ui-grid>
 
+    <ui-form-field label="Notes">
+      <ui-textarea
+        v-model="form.notes.value"
+        placeholder="e.g. Good Tech Company"
+        @focus="openModal"
+      />
+    </ui-form-field>
+
     <ui-button @click="handleSubmit">
       Submit
     </ui-button>
@@ -55,6 +63,9 @@ import { UiCard } from 'Components/Card';
 import { UiFormField } from 'Components/FormField';
 import { UiGrid, UiGridItem } from 'Components/Grid';
 import { UiInput } from 'Components/Input';
+import { UiTextarea } from 'Components/Textarea';
+
+import NotesModal from './components/NotesModal.vue';
 
 export default {
   inject: ['layerAPI'],
@@ -66,6 +77,7 @@ export default {
     UiGrid,
     UiGridItem,
     UiInput,
+    UiTextarea,
   },
 
   data() {
@@ -83,6 +95,9 @@ export default {
           value: '',
           errors: [],
         },
+        notes: {
+          value: '',
+        },
       },
     };
   },
@@ -96,6 +111,8 @@ export default {
       ],
     );
     this.$store.commit('layout/setVariant', 'normal');
+
+    this.layerAPI.beforeClose = this.modalSaved;
   },
 
   methods: {
@@ -128,6 +145,21 @@ export default {
       } else {
         field.errors.splice(field.errors.indexOf(error, 1));
       }
+    },
+
+    openModal() {
+      this.layerAPI.open(
+        NotesModal,
+        {
+          props: {
+            additionalNotes: this.form.notes.value,
+          },
+        },
+      );
+    },
+
+    modalSaved(data) {
+      this.form.notes.value = data;
     },
   },
 };
