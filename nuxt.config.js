@@ -39,6 +39,7 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+    'nuxt-svg-loader',
   ],
   /*
   ** Build configuration
@@ -50,6 +51,7 @@ export default {
     extend (config, ctx) {
       // Setup Aliases
       config.resolve.alias = {
+        Assets: path.resolve(__dirname, 'assets'),
         Components: path.resolve(__dirname, 'components'),
       };
 
