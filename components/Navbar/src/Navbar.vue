@@ -61,6 +61,7 @@ export default {
 @import 'Vars';
 
 .Navbar {
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   width: 100%;
