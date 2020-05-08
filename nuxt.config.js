@@ -92,6 +92,7 @@ export default {
         'postcss-import': {
           resolve(id) {
             const aliases = {
+              Docs: path.resolve(__dirname, 'assets/styles/docs.css'),
               Vars: path.resolve(__dirname, 'assets/styles/vars.css'),
             };
 
