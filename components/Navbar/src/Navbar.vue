@@ -63,6 +63,7 @@ export default {
 .Navbar {
   display: flex;
   align-items: center;
+  width: 100%;
   padding: var(--space-lg) var(--space-xl);
   background: var(--color-blue-500);
 }
