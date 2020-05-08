@@ -49,7 +49,7 @@ The `layerAPI` also provides two methods for closing a layer: `cancel` and `clos
       </ui-button>
     </div>
     <div class="demo__item">
-    Layer closed with: {{ closeMethod }}
+      Layer closed with: {{ closeMethod }}
     </div>
   </div>
 </template>
@@ -136,7 +136,7 @@ Refer to the [vue docs](https://vuejs.org/v2/guide/render-function.html#The-Data
 
 | Name | Parameters | Description |
 | ---- | ---------- | ----------- |
-| `open` | `(Component, { DataObject* })` | Component: The component you want mounted. <br> DataObject: Vue data object. |
+| `open` | `(Component, { DataObject })` | Component: The component you want mounted. <br> DataObject: Vue data object. |
 | `cancel` | `{ DataObject }` | DataObject: Vue data object. Runs when a layer's overlay is clicked. |
 | `close` | `{ DataObject }` | DataObject: Vue data object. Must be defined to be used. |
 

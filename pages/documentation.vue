@@ -65,6 +65,10 @@ export default {
         title: 'Loading Indicator',
       },
       {
+        to: '/documentation/modal',
+        title: 'Modal',
+      },
+      {
         to: '/documentation/nav',
         title: 'Nav',
       },

@@ -124,5 +124,6 @@
 @custom-media --mobile-up (min-width: 600px);
 @custom-media --tablet-up (min-width: 768px);
 @custom-media --tablet-down (max-width: 768px);
+@custom-media --lg-tablet-down (max-width: 992px);
 @custom-media --lg-tablet-up (min-width: 992px);
 @custom-media --desktop-up (min-width: 1200px);
