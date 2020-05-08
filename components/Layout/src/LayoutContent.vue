@@ -27,6 +27,7 @@ export default {
 
 .LayoutContent {
   flex: 1;
+  width: 100%;
   max-width: 100%;
 
   &.has-sider {
