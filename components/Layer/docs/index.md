@@ -6,6 +6,8 @@ The Layer component is used to mount components in an overlay over an applicatio
 ## Opening a Layer
 To open a component in a layer, inject the layerAPI and then pass in your component. Our documentation uses the Layout component already, so we have this API provided.
 
+View the OpenLayerDemo component on [Github](https://github.com/JacobRex/ui-challenge/blob/extra-credit/components/Layer/docs/OpenLayerDemo.vue).
+
 ```vue
 <template>
   <div class="demo">
@@ -39,6 +41,8 @@ export default {
 Layers can be closed by clicking the overlay behind the mounted component.
 
 The `layerAPI` also provides two methods for closing a layer: `cancel` and `close`. The `beforeCancel` and `beforeClose` callbacks can be defined and used if needed.
+
+View the CloseLayerDemo component on [Github](https://github.com/JacobRex/ui-challenge/blob/extra-credit/components/Layer/docs/CloseLayerDemo.vue).
 
 ```vue
 <template>
@@ -93,6 +97,8 @@ export default {
 You can pass a data object to the layer. This is useful if you want to pass props to your layer.
 
 Refer to the [vue docs](https://vuejs.org/v2/guide/render-function.html#The-Data-Object-In-Depth) for all the options available.
+
+View the PropsLayerDemo component on [Github](https://github.com/JacobRex/ui-challenge/blob/extra-credit/components/Layer/docs/PropsLayerDemo.vue).
 
 ```vue
 <template>

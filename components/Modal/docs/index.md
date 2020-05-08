@@ -6,6 +6,8 @@ A Modal is a component meant to be opened in a [Layer](/documentation/Layer). Yo
 ## Opening a Modal
 To open a Modal, inject the layerAPI and then pass in your Modal. Our documentation uses the Layout component already, so we have this API provided.
 
+View the OpenModalDemo component on [Github](https://github.com/JacobRex/ui-challenge/blob/extra-credit/components/Modal/docs/OpenModalDemo.vue).
+
 ```vue
 <template>
   <div class="demo">
@@ -39,6 +41,8 @@ export default {
 Modals can be cancelled by clicking the overlay behind them or the X icon inside.
 
 The `layerAPI` also provides two methods for closing a layer: `cancel` and `close`. The `beforeCancel` and `beforeClose` callbacks can be defined and used if needed.
+
+View the CloseModalDemo component on [Github](https://github.com/JacobRex/ui-challenge/blob/extra-credit/components/Modal/docs/CloseModalDemo.vue).
 
 ```vue
 <template>
@@ -93,6 +97,8 @@ export default {
 You can pass a data object to the Modal. This is useful if you want to pass props to your Modal.
 
 Refer to the [vue docs](https://vuejs.org/v2/guide/render-function.html#The-Data-Object-In-Depth) for all the options available.
+
+View the PropsModalDemo component on [Github](https://github.com/JacobRex/ui-challenge/blob/extra-credit/components/Modal/docs/PropsModalDemo.vue).
 
 ```vue
 <template>
