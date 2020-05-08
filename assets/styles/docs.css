@@ -2,6 +2,10 @@ body {
   overflow-y: scroll;
 }
 
+a:not([class]) {
+  color: var(--color-pink-500);
+}
+
 .docs div {
   /* Typography
   -------------------------------------------- */
@@ -106,13 +110,6 @@ body {
       white-space: pre;
       overflow: auto;
     }
-  }
-
-  /* Links
-  -------------------------------------------- */
-  & > p a {
-    color: var(--color-pink-500);
-    text-decoration: none;
   }
 
   /* Tables
