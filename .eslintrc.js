@@ -16,6 +16,7 @@ module.exports = {
   // required to lint *.vue files
   plugins: [
     'vue',
+    'markdown',
   ],
   // add your custom rules here
   rules: {

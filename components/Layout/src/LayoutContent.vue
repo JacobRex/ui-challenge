@@ -1,5 +1,10 @@
 <template>
-  <div :class="$s.LayoutContent">
+  <div
+    :class="[
+      $s.LayoutContent,
+      { [$s['has-sider']]: hasSider },
+    ]"
+  >
     <slot />
   </div>
 </template>
@@ -7,6 +12,13 @@
 <script>
 export default {
   name: 'UiLayoutContent',
+
+  props: {
+    hasSider: {
+      type: Boolean,
+      default: false,
+    },
+  },
 };
 </script>
 
@@ -15,5 +27,11 @@ export default {
 
 .LayoutContent {
   flex: 1;
+  width: 100%;
+  max-width: 100%;
+
+  &.has-sider {
+    max-width: calc(var(--max-width) -  var(--layout-sider-width) - var(--space-xx));
+  }
 }
 </style>

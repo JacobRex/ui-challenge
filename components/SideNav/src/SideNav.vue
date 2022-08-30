@@ -36,6 +36,7 @@ export default {
 .SideNav {
   display: flex;
   flex-direction: column;
+  width: 100%;
   border-radius: var(--border-radius);
 }
 

@@ -22,6 +22,7 @@
   /* Colors
   -------------------------------------------- */
   --color-pink-500: #FF3C6A;
+  --color-pink-515: #FF3C6A15;
 
   --color-red-500: #A52929;
 
@@ -122,5 +123,7 @@
 -------------------------------------------- */
 @custom-media --mobile-up (min-width: 600px);
 @custom-media --tablet-up (min-width: 768px);
+@custom-media --tablet-down (max-width: 768px);
+@custom-media --lg-tablet-down (max-width: 992px);
 @custom-media --lg-tablet-up (min-width: 992px);
 @custom-media --desktop-up (min-width: 1200px);

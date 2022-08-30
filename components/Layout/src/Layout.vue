@@ -107,6 +107,7 @@ h1, h2, h3, h4, h5, h6, p {
 .Layout {
   display: flex;
   flex-direction: column;
+  width: 100%;
   position: relative;
   color: var(--font-color);
   font-family: var(--font-family);

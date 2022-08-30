@@ -4,10 +4,7 @@
   >
     <div
       v-if="title"
-      :class="[
-        $s.CardHeader,
-        $s[`padding_${padding}`]
-      ]"
+      :class="$s.CardHeader"
     >
       <ui-heading
         :class="$s.CardTitle"
@@ -22,10 +19,7 @@
       :class="[
         $s.CardContent,
         $s[`padding_${padding}`],
-        {
-          [$s['has-header']]: title,
-          [$s.flush]: flushContent,
-        }
+        { [$s['has-header']]: title, }
       ]"
     >
       <slot />
@@ -44,10 +38,6 @@ export default {
   },
 
   props: {
-    flushContent: {
-      type: Boolean,
-      default: false,
-    },
     title: {
       type: String,
       default: undefined,
@@ -69,6 +59,10 @@ export default {
   border-radius: var(--border-radius);
   background-color: var(--color-white);
   overflow: hidden;
+}
+
+.CardHeader {
+  padding: var(--space-lg);
 }
 
 .CardContent {
